@@ -1,0 +1,22 @@
+<mat-toolbar color="primary" class="navigation-toolbar">
+  <div class="navigation-buttons">
+    <button
+      mat-raised-button
+      routerLink="/weather"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      class="nav-button">
+      <mat-icon>wb_sunny</mat-icon>
+      Weather
+    </button>
+
+    <button
+      mat-raised-button
+      routerLink="/news"
+      routerLinkActive="active"
+      class="nav-button">
+      <mat-icon>article</mat-icon>
+      News
+    </button>
+  </div>
+</mat-toolbar>
