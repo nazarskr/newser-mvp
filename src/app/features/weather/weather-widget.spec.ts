@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { WeatherWidget } from './weather-widget';
+import {WeatherWidget} from './weather-widget';
 
 describe('WeatherWidget', () => {
   let component: WeatherWidget;
@@ -10,7 +10,7 @@ describe('WeatherWidget', () => {
     await TestBed.configureTestingModule({
       imports: [WeatherWidget]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(WeatherWidget);
     component = fixture.componentInstance;

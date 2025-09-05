@@ -1,0 +1,32 @@
+[
+  {
+    "id": "kyiv",
+    "name": "Kyiv",
+    "lat": 50.45,
+    "lon": 30.52
+  },
+  {
+    "id": "warsaw",
+    "name": "Warsaw",
+    "lat": 52.2297,
+    "lon": 21.0122
+  },
+  {
+    "id": "berlin",
+    "name": "Berlin",
+    "lat": 52.52,
+    "lon": 13.405
+  },
+  {
+    "id": "lisbon",
+    "name": "Lisbon",
+    "lat": 38.7223,
+    "lon": -9.1393
+  },
+  {
+    "id": "oslo",
+    "name": "Oslo",
+    "lat": 59.9139,
+    "lon": 10.7522
+  }
+]

@@ -1,1 +1,22 @@
-<p>news-card works!</p>
+<mat-card class="news-card">
+  <mat-card-header>
+    <mat-card-title>{{ newsItem().title }}</mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+    <div class="news-meta">
+      <span class="published-date">
+        {{ newsItem().publishedAt | date:dateFormat }}
+      </span>
+    </div>
+
+    <div class="news-actions">
+      <button mat-raised-button color="primary" routerLink="{{newsItem().id}}">
+        Read More
+      </button>
+      <a [href]="newsItem().originalUrl" target="_blank" mat-button color="accent">
+        Original Source
+      </a>
+    </div>
+  </mat-card-content>
+</mat-card>

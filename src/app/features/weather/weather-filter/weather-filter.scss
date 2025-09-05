@@ -1,0 +1,102 @@
+.weather-filter {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: flex-end;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+
+  ::ng-deep {
+    .selector-field {
+      min-width: 200px;
+
+      .mat-mdc-form-field-wrapper {
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+
+        &:hover {
+          box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+          transform: translateY(-1px);
+        }
+      }
+
+      .mat-mdc-form-field-outline {
+        border-radius: 12px;
+
+        .mat-mdc-form-field-outline-start,
+        .mat-mdc-form-field-outline-end {
+          border-radius: 12px;
+        }
+      }
+
+      .mat-mdc-form-field-focus-overlay {
+        border-radius: 12px;
+      }
+
+      .mdc-notched-outline__leading,
+      .mdc-notched-outline__trailing {
+        border-color: #e0e0e0;
+        border-width: 1px;
+      }
+
+      .mdc-notched-outline__notch {
+        border-color: #e0e0e0;
+        border-width: 1px 0;
+      }
+
+      &.mat-focused {
+        .mdc-notched-outline__leading,
+        .mdc-notched-outline__trailing,
+        .mdc-notched-outline__notch {
+          border-color: #667eea;
+          border-width: 2px;
+        }
+
+        .mdc-notched-outline__notch {
+          border-width: 2px 0;
+        }
+      }
+
+      .mat-mdc-form-field-label {
+        color: #6c757d;
+        font-weight: 500;
+      }
+
+      .mat-mdc-select-value {
+        color: #2c3e50;
+        font-weight: 500;
+      }
+
+      .mat-mdc-select-arrow {
+        color: #667eea;
+      }
+    }
+  }
+}
+
+// Responsive design for weather filter
+@media (max-width: 768px) {
+  .weather-filter {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+
+    ::ng-deep .selector-field {
+      min-width: unset;
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .weather-filter {
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+  }
+}

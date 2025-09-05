@@ -1,1 +1,19 @@
-<p>news-list works!</p>
+<div class="news-list">
+  <h2>Latest News</h2>
+
+  <app-date-range-selector (dateRangeChanged)="onDateRangeChanged($event)"></app-date-range-selector>
+
+  @if (news().length === 0) {
+    <div class="no-news">
+      <p>Loading news...</p>
+    </div>
+  } @else {
+    <div class="news-grid">
+      @for (newsItem of news(); track newsItem.id) {
+        <app-news-card
+          [newsItem]="newsItem"
+        />
+      }
+    </div>
+  }
+</div>

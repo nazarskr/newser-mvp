@@ -1,0 +1,19 @@
+<div class="weather-filter">
+  <app-generic-selector
+    [label]="'City'"
+    [items]="cities()"
+    [selected]="selectedCity()"
+    [getItemId]="getCityId"
+    [getItemName]="getCityName"
+    (selectionChange)="onCityChange($event)"
+  />
+
+  <app-generic-selector
+    [label]="'Report Type'"
+    [items]="reportTypes()"
+    [selected]="selectedReportType()"
+    [getItemId]="getReportTypeId"
+    [getItemName]="getReportTypeName"
+    (selectionChange)="onReportTypeChange($event)"
+  />
+</div>

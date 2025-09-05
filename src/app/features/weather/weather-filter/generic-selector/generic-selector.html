@@ -1,0 +1,15 @@
+<mat-form-field appearance="outline" subscriptSizing="dynamic" class="selector-field">
+  <mat-label>{{ label() }}</mat-label>
+
+  <mat-select
+    [value]="selectedId()"
+    (selectionChange)="onSelect($event.value)"
+    [disabled]="isEmpty()"
+  >
+    @for (item of items(); track getItemId()(item)) {
+      <mat-option [value]="getItemId()(item)">
+        {{ getItemName()(item) }}
+      </mat-option>
+    }
+  </mat-select>
+</mat-form-field>
