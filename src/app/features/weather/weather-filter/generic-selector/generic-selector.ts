@@ -20,19 +20,15 @@ export interface SelectableItem {
   styleUrl: './generic-selector.scss'
 })
 export class GenericSelector<T> {
-  // Input properties
   label = input.required<string>();
   items = input.required<T[]>();
   selected = input.required<T | null>();
 
-  // Functions to extract id and name from items
   getItemId = input.required<(item: T) => string>();
   getItemName = input.required<(item: T) => string>();
 
-  // Output events
   selectionChange = output<T>();
 
-  // Computed properties
   readonly selectedId = computed(() => {
     const selectedItem = this.selected();
     return selectedItem ? this.getItemId()(selectedItem) : null;
