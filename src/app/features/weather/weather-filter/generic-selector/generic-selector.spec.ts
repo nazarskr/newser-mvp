@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CitySelector } from './city-selector';
+import { GenericSelector } from './generic-selector';
 
-describe('CitySelector', () => {
-  let component: CitySelector;
-  let fixture: ComponentFixture<CitySelector>;
+describe('GenericSelector', () => {
+  let component: GenericSelector;
+  let fixture: ComponentFixture<GenericSelector>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CitySelector]
+      imports: [GenericSelector]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(CitySelector);
+    fixture = TestBed.createComponent(GenericSelector);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

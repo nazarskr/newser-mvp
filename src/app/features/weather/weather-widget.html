@@ -1,1 +1,62 @@
-<p>weather-widget works!</p>
+<app-weather-filter/>
+
+<div class="weather-content">
+  @if (selectedCity() && selectedReportType()) {
+    <h3>Weather in {{selectedCity()!.name}} - {{selectedReportType() | titlecase}} Report</h3>
+
+    @if (isLoading()) {
+      <div class="loading">
+        <p>Loading weather data...</p>
+      </div>
+    } @else if (error()) {
+      <div class="error">
+        <p>Error loading weather data: {{error()?.message}}</p>
+      </div>
+    } @else {
+      @if (selectedReportType() === 'current' && currentWeather()) {
+        <div class="current-weather">
+          <div class="weather-details">
+            <p><strong>Temperature:</strong> {{currentWeather()!.tempC}}°C</p>
+            <p><strong>Humidity:</strong> {{currentWeather()!.humidityPct}}%</p>
+            <p><strong>Condition:</strong> {{currentWeather()!.conditionLabel}}</p>
+            <p><strong>Precipitation:</strong> {{currentWeather()!.hasPrecipitation ? 'Yes' : 'No'}}</p>
+          </div>
+        </div>
+      }
+
+      @if (selectedReportType() === 'hourly' && hourlyWeather().length > 0) {
+        <div class="hourly-weather">
+          <div class="hourly-grid">
+            @for (hour of hourlyWeather(); track hour.timeISO) {
+              <div class="hour-item">
+                <div class="hour-time">{{hour.hourLabel}}</div>
+                <div class="hour-temp">{{hour.tempC}}°C</div>
+                <div class="hour-condition">{{hour.conditionLabel}}</div>
+                <div class="hour-precip">{{hour.precipProbPct}}% rain</div>
+              </div>
+            }
+          </div>
+        </div>
+      }
+
+      @if (selectedReportType() === 'daily' && dailyWeather().length > 0) {
+        <div class="daily-weather">
+          <div class="daily-grid">
+            @for (day of dailyWeather(); track day.dateISO) {
+              <div class="day-item">
+                <div class="day-name">{{day.weekdayShort}}</div>
+                <div class="day-temp">{{day.tMaxC}}° / {{day.tMinC}}°C</div>
+                <div class="day-condition">{{day.conditionLabel}}</div>
+                <div class="day-precip">{{day.precipProbMaxPct}}% rain</div>
+              </div>
+            }
+          </div>
+        </div>
+      }
+    }
+  } @else {
+    <div class="no-selection">
+      <p>Please select a city and report type to view weather data.</p>
+    </div>
+  }
+</div>

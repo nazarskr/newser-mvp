@@ -1,1 +1,52 @@
-<p>news-details works!</p>
+<div class="news-details">
+  @if (itemDetails(); as item) {
+    <mat-card class="details-card">
+      <mat-card-header>
+        <mat-card-title>{{ item.title }}</mat-card-title>
+      </mat-card-header>
+
+      <mat-card-content>
+        <div class="news-meta">
+          <div class="meta-item">
+            <span class="meta-label">Published:</span>
+            <span class="meta-value">{{ item.publishedAt | date:dateFormat }}</span>
+          </div>
+
+          @if (item.author) {
+            <div class="meta-item">
+              <span class="meta-label">Author:</span>
+              <span class="meta-value">{{ item.author }}</span>
+            </div>
+          }
+
+          <div class="meta-item">
+            <span class="meta-label">Language:</span>
+            <mat-chip-set>
+              <mat-chip>{{ item.lang.toUpperCase() }}</mat-chip>
+            </mat-chip-set>
+          </div>
+        </div>
+
+        <div class="content-section">
+          <h3>Original Text</h3>
+          <div class="text-content original-text">
+            {{ item.text }}
+          </div>
+        </div>
+
+        <div class="content-section">
+          <h3>Translated Text</h3>
+          <div class="text-content translated-text">
+            {{ item.translatedText }}
+          </div>
+        </div>
+
+        <div class="actions">
+          <a [href]="item.originalUrl" target="_blank" mat-raised-button color="primary">
+            View Original Source
+          </a>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  }
+</div>
