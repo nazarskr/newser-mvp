@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { Navigation } from './navigation';
+import {Navigation} from './navigation';
 
 describe('Navigation', () => {
   let component: Navigation;
@@ -10,7 +10,7 @@ describe('Navigation', () => {
     await TestBed.configureTestingModule({
       imports: [Navigation]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(Navigation);
     component = fixture.componentInstance;

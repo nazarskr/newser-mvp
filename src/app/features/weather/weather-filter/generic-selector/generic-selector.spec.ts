@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { GenericSelector } from './generic-selector';
+import {GenericSelector} from './generic-selector';
 
 describe('GenericSelector', () => {
   let component: GenericSelector;
@@ -10,7 +10,7 @@ describe('GenericSelector', () => {
     await TestBed.configureTestingModule({
       imports: [GenericSelector]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(GenericSelector);
     component = fixture.componentInstance;

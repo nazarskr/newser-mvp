@@ -122,7 +122,7 @@ export class WeatherRepository {
   private transformHourlyWeather(hourly: WeatherApiResponse[string]['hourly']): HourlyWeather[] {
     return hourly.time.map((time, index) => ({
       timeISO: time,
-      hourLabel: new Date(time).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' }),
+      hourLabel: new Date(time).toLocaleTimeString('en-US', {hour: '2-digit', minute: '2-digit'}),
       tempC: hourly.temperature[index],
       humidityPct: hourly.humidity[index],
       precipMm: hourly.precipitation[index],
@@ -135,7 +135,7 @@ export class WeatherRepository {
   private transformDailyWeather(daily: WeatherApiResponse[string]['daily']): DailyWeather[] {
     return daily.time.map((date, index) => ({
       dateISO: date,
-      weekdayShort: new Date(date).toLocaleDateString('en-US', { weekday: 'short' }),
+      weekdayShort: new Date(date).toLocaleDateString('en-US', {weekday: 'short'}),
       tMaxC: daily.tMax[index],
       tMinC: daily.tMin[index],
       humidityMeanPct: daily.rhMean[index],

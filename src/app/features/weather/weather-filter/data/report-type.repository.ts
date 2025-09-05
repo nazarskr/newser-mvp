@@ -4,13 +4,13 @@ import {toSignal} from '@angular/core/rxjs-interop';
 
 export type ReportType = 'current' | 'hourly' | 'daily';
 
-@Injectable({ providedIn: 'root' })
+@Injectable({providedIn: 'root'})
 export class ReportTypeRepository {
   private http = inject(HttpClient)
 
   readonly reportTypes = toSignal(
     this.http.get<ReportType[]>('/mock-data/report-types.json'),
-    { initialValue: [] }
+    {initialValue: []}
   );
 
   private readonly _selected = signal<ReportType | null>(null);

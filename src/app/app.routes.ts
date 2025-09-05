@@ -1,6 +1,6 @@
-import { Routes } from '@angular/router';
-import { WeatherWidget } from './features/weather/weather-widget';
-import { newsRoutes } from './features/news/news.routes';
+import {Routes} from '@angular/router';
+import {WeatherWidget} from './features/weather/weather-widget';
+import {newsRoutes} from './features/news/news.routes';
 
 export const routes: Routes = [
   {

@@ -1,6 +1,6 @@
-import { TestBed } from '@angular/core/testing';
+import {TestBed} from '@angular/core/testing';
 
-import { ReportTypeRepository } from './report-type.repository';
+import {ReportTypeRepository} from './report-type.repository';
 
 describe('ReportType', () => {
   let service: ReportTypeRepository;

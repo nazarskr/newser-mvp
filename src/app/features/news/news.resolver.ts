@@ -1,6 +1,6 @@
-import { Injectable, inject } from '@angular/core';
-import { Router, ActivatedRouteSnapshot } from '@angular/router';
-import { NewsRepository } from './news.repository';
+import {Injectable, inject} from '@angular/core';
+import {Router, ActivatedRouteSnapshot} from '@angular/router';
+import {NewsRepository} from './news.repository';
 
 @Injectable({
   providedIn: 'root'

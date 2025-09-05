@@ -9,13 +9,13 @@ export interface City {
   lon: number;
 }
 
-@Injectable({ providedIn: 'root' })
+@Injectable({providedIn: 'root'})
 export class CitiesRepository {
   private http = inject(HttpClient)
 
   readonly cities = toSignal(
     this.http.get<City[]>('/mock-data/cities.json'),
-    { initialValue: [] }
+    {initialValue: []}
   );
 
   private readonly _selected = signal<City | null>(null);
